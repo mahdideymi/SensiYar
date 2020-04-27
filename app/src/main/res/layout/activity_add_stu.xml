@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="addStuViewModel"
+            type="com.gym.sensiyar.addStu.AddStuViewModel" />
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_14"
+        tools:context=".addStu.AddStuActivity">
+
+        <!-- header -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addStuHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/addStuClose"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:layout_marginRight="@dimen/size_20"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="@id/addStuHeader"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/size_12"
+                android:text="اضافه کردن هنرجو"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_18"
+                app:layout_constraintBottom_toBottomOf="@id/addStuHeader"
+                app:layout_constraintRight_toLeftOf="@id/addStuClose"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/addStuDelFormIcon"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:layout_marginLeft="@dimen/size_14"
+                android:src="@drawable/ic_close_white"
+                app:layout_constraintBottom_toBottomOf="@id/addStuHeader"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/addStuDelFormTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="حذف اطلاعات"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_14"
+                app:layout_constraintBottom_toBottomOf="@id/addStuDelFormIcon"
+                app:layout_constraintLeft_toRightOf="@id/addStuDelFormIcon"
+                app:layout_constraintTop_toTopOf="@id/addStuDelFormIcon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/size_8"
+                android:paddingRight="@dimen/size_8">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/size_10"
+                    app:cardElevation="@dimen/size_4"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:paddingBottom="@dimen/size_4">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/size_12"
+                            android:paddingTop="@dimen/size_12"
+                            android:paddingRight="@dimen/size_12"
+                            android:weightSum="4">
+
+                            <LinearLayout
+                                android:id="@+id/completeProfileAddPhoto"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="@dimen/size_10"
+                                android:layout_weight="1.1"
+                                android:background="@drawable/edt_background"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/size_40"
+                                    android:layout_height="@dimen/size_40"
+                                    android:src="@drawable/ic_add_a_photo" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_8"
+                                android:layout_weight="2.9"
+                                android:orientation="vertical">
+
+                                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                    android:id="@+id/addStuFullName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edt_background"
+                                    android:hint="@string/full_name"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={addStuViewModel.fullNameLive}"
+                                    android:padding="@dimen/size_10"
+                                    android:textSize="@dimen/font_size_14" />
+
+                                <com.gym.sensiyar.customControls.CustomTextViewMedium
+                                    android:id="@+id/completeProfileFullNameErr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorRed"
+                                    android:textSize="@dimen/font_size_10"
+                                    android:visibility="invisible"
+                                    app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                                    app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                                    tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                    android:id="@+id/addStuRegDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edt_background"
+                                    android:hint="تاریخ ثبت نام"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/size_10"
+                                    android:textSize="@dimen/font_size_14"
+                                    android:text="@={addStuViewModel.regDateLive}"/>
+
+                                <com.gym.sensiyar.customControls.CustomTextViewMedium
+                                    android:id="@+id/completeProfileFieldErr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorRed"
+                                    android:textSize="@dimen/font_size_10"
+                                    android:visibility="invisible"
+                                    app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                                    app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                                    tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/addStuPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/size_10"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:background="@drawable/edt_background"
+                            android:hint="میزان شهریه (تومان)"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:text="@={addStuViewModel.priceLive}"
+                            android:textSize="@dimen/font_size_14" />
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileFieldErr12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/size_10"
+                    app:cardElevation="@dimen/size_4"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_10"
+                        android:paddingBottom="@dimen/size_4">
+
+                        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="اطلاعات تماس"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_size_18" />
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/addStuPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/size_10"
+                            android:layout_marginTop="@dimen/size_10"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:background="@drawable/edt_background"
+                            android:hint="شماره تلفن هنرجو"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:textSize="@dimen/font_size_14"
+                            android:text="@={addStuViewModel.phoneNumberLive}"/>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/addStuParentPhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/size_10"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:background="@drawable/edt_background"
+                            android:hint="شماره تلفن والدین"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:textSize="@dimen/font_size_14"
+                            android:text="@={addStuViewModel.parentPhoneNumberLive}"/>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/size_10"
+                    app:cardElevation="@dimen/size_4"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_10"
+                        android:paddingBottom="@dimen/size_4">
+
+                        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="اطلاعات والدین"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_size_18" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_10"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                android:id="@+id/addStuFatherName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_10"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edt_background"
+                                android:hint="نام پدر"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:padding="@dimen/size_10"
+                                android:textSize="@dimen/font_size_14"
+                                android:text="@={addStuViewModel.fatherNameLive}"/>
+
+                            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                android:id="@+id/addStuFatherBusiness"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_10"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edt_background"
+                                android:hint="شغل پدر"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:padding="@dimen/size_10"
+                                android:textSize="@dimen/font_size_14"
+                                android:text="@={addStuViewModel.fatherBusinessLive}"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_10"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                android:id="@+id/addStuMotherName"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_10"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edt_background"
+                                android:hint="نام مادر"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:padding="@dimen/size_10"
+                                android:textSize="@dimen/font_size_14"
+                                android:text="@={addStuViewModel.motherNameLive}"/>
+
+                            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                android:id="@+id/addStuMotherBusiness"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_10"
+                                android:layout_weight="0.5"
+                                android:background="@drawable/edt_background"
+                                android:hint="شغل مادر"
+                                android:inputType="text"
+                                android:maxLines="1"
+                                android:padding="@dimen/size_10"
+                                android:textSize="@dimen/font_size_14"
+                                android:text="@={addStuViewModel.motherBusinessLive}"/>
+
+                        </LinearLayout>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileFieldErr1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/size_10"
+                    app:cardElevation="@dimen/size_4"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="rtl"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_10"
+                        android:paddingBottom="@dimen/size_4">
+
+                        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="سوابق ورزشی"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/font_size_18" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                android:id="@+id/addStuAddHistoryEdt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/size_10"
+                                android:layout_marginTop="@dimen/size_10"
+                                android:layout_marginRight="@dimen/size_10"
+                                android:background="@drawable/edt_background"
+                                android:hint="سابقه را اینجا وارد نمایید"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:padding="@dimen/size_12"
+                                android:textSize="@dimen/font_size_14"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:background="@drawable/corner_primary"
+                                android:padding="@dimen/size_12"
+                                android:src="@drawable/ic_add"
+                                app:layout_constraintBottom_toBottomOf="@id/addStuAddHistoryEdt"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="@id/addStuAddHistoryEdt" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/size_10"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/addStudAddHistoryRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addStuNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_12"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:background="@drawable/edt_background"
+                    android:gravity="top"
+                    android:textSize="@dimen/font_size_14"
+                    android:hint="یادداشت اضافی ..."
+                    android:padding="@dimen/size_12"
+                    android:text="@={addStuViewModel.noteLive}"/>
+
+                <com.gym.sensiyar.customControls.CustomButtonMeduim
+                    android:id="@+id/addStuDoneBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/size_8"
+                    android:layout_marginTop="@dimen/size_18"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:onClick="@{(v)->addStuViewModel.onClick(v)}"
+                    android:background="@drawable/corner_primary"
+                    android:text="اضافه کردن"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/font_size_14" />
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

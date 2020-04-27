@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/size_10"
+    android:layout_marginTop="@dimen/size_2"
+    app:cardBackgroundColor="@color/colorWhite"
+    app:cardElevation="@dimen/size_4"
+    app:cardPreventCornerOverlap="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/size_12"
+            android:paddingEnd="@dimen/size_12"
+            android:paddingTop="@dimen/size_18"
+            android:paddingBottom="@dimen/size_18">
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:id="@+id/bedehkarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="مهدی دیمی"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_16" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/bedehkarPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="۴۰/۰۰۰ تومان"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_14"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.gym.sensiyar.customControls.CustomButtonMeduim
+            android:id="@+id/bedehkarPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_14"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/corner_primary"
+            android:text="پرداخت"
+            android:padding="@dimen/size_10"
+            android:gravity="center"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

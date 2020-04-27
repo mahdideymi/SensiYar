@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/size_10"
+    app:cardElevation="@dimen/size_4"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:padding="@dimen/size_10"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_4">
+
+        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/font_size_18"
+            android:textColor="@color/colorBlack"
+            android:text="اطلاعات تماس"/>
+
+        <com.gym.sensiyar.customControls.CustomEditTextMedium
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_marginRight="@dimen/size_10"
+            android:layout_marginTop="@dimen/size_10"
+            android:background="@drawable/edt_background"
+            android:hint="شماره تلفن هنرجو"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="@dimen/size_10"
+            android:textSize="@dimen/font_size_14" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewMedium
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/font_size_10"
+            android:layout_marginRight="@dimen/size_10"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+        <com.gym.sensiyar.customControls.CustomEditTextMedium
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_marginRight="@dimen/size_10"
+            android:background="@drawable/edt_background"
+            android:hint="شماره تلفن والدین"
+            android:inputType="number"
+            android:maxLines="1"
+            android:padding="@dimen/size_10"
+            android:textSize="@dimen/font_size_14" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewMedium
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorRed"
+            android:textSize="@dimen/font_size_10"
+            android:layout_marginRight="@dimen/size_10"
+            android:visibility="invisible"
+            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

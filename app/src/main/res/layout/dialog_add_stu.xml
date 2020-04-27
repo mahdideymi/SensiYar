@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+<!--        <variable-->
+<!--            name="addClassViewModel"-->
+<!--            type="com.gym.sensiyar.addClass.AddClassViewModel" />-->
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_primary_20">
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/addStuBody"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@drawable/corner_white"-->
+<!--            android:paddingLeft="@dimen/size_14"-->
+<!--            android:paddingTop="@dimen/size_14"-->
+<!--            android:paddingRight="@dimen/size_14"-->
+<!--            android:paddingBottom="@dimen/size_25"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                android:id="@+id/addStuTitle"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="@string/add_stu"-->
+<!--                android:textColor="@color/colorBlack"-->
+<!--                android:textSize="@dimen/font_size_16"-->
+<!--                android:layout_marginRight="@dimen/size_18"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--            <ImageView-->
+<!--                android:id="@+id/addStuClose"-->
+<!--                android:layout_width="@dimen/size_25"-->
+<!--                android:layout_height="@dimen/size_25"-->
+<!--                android:src="@drawable/ic_close"-->
+<!--                android:layout_marginLeft="@dimen/size_8"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <ScrollView-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/addStuTitle"-->
+<!--                android:layout_margin="@dimen/size_12"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:gravity="right">-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomEditTextMedium-->
+<!--                        android:id="@+id/addStuName"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_10"-->
+<!--                        android:background="@drawable/edt_background"-->
+<!--                        android:hint="@string/name_family"-->
+<!--                        android:padding="@dimen/size_12"-->
+<!--                        android:textSize="@dimen/font_size_14"-->
+<!--                        android:gravity="right"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:maxLines="1" />-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                        android:id="@+id/addStuNameError"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_4"-->
+<!--                        android:textSize="@dimen/font_size_12"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:textColor="@color/colorRed"/>-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomEditTextMedium-->
+<!--                        android:id="@+id/addStuBimeNum"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/edt_background"-->
+<!--                        android:hint="@string/bime_num"-->
+<!--                        android:padding="@dimen/size_12"-->
+<!--                        android:textSize="@dimen/font_size_14"-->
+<!--                        android:gravity="right"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:maxLines="1" />-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                        android:id="@+id/addStuNameBimeNumError"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_4"-->
+<!--                        android:textSize="@dimen/font_size_12"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:textColor="@color/colorRed"/>-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomEditTextMedium-->
+<!--                        android:id="@+id/addStuHbd"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/edt_background"-->
+<!--                        android:hint="@string/hbd"-->
+<!--                        android:padding="@dimen/size_12"-->
+<!--                        android:textSize="@dimen/font_size_14"-->
+<!--                        android:gravity="right"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:maxLines="1" />-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                        android:id="@+id/addStuNameHbdError"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_4"-->
+<!--                        android:textSize="@dimen/font_size_12"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:textColor="@color/colorRed"/>-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomEditTextMedium-->
+<!--                        android:id="@+id/addStuPhoneNum"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/edt_background"-->
+<!--                        android:hint="@string/phone_num"-->
+<!--                        android:padding="@dimen/size_12"-->
+<!--                        android:textSize="@dimen/font_size_14"-->
+<!--                        android:gravity="right"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:maxLines="1" />-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                        android:id="@+id/addStuNamePhoneNumError"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_4"-->
+<!--                        android:textSize="@dimen/font_size_12"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:textColor="@color/colorRed"/>-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomEditTextMedium-->
+<!--                        android:id="@+id/addStuRegDate"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/edt_background"-->
+<!--                        android:hint="@string/reg_date"-->
+<!--                        android:padding="@dimen/size_12"-->
+<!--                        android:textSize="@dimen/font_size_14"-->
+<!--                        android:gravity="right"-->
+<!--                        android:inputType="textEmailAddress"-->
+<!--                        android:maxLines="1" />-->
+
+<!--                    <com.gym.sensiyar.customControls.CustomTextViewMedium-->
+<!--                        android:id="@+id/addStuNameRegDateError"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/size_4"-->
+<!--                        android:textSize="@dimen/font_size_12"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:textColor="@color/colorRed"/>-->
+
+<!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <com.gym.sensiyar.customControls.CustomTextViewLight-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:layout_constraintRight_toRightOf="parent"-->
+<!--                            app:layout_constraintTop_toTopOf="parent"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                            android:text="@string/price_status"-->
+<!--                            android:textColor="@color/colorAccent"-->
+<!--                            android:textSize="@dimen/font_size_14"/>-->
+
+<!--                        <com.suke.widget.SwitchButton-->
+<!--                            android:id="@+id/addStuPriceStatus"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+<!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--                </LinearLayout>-->
+
+<!--            </ScrollView>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/deleteDialogFooter"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/size_50"-->
+<!--            android:layout_margin="@dimen/size_12"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/addStuBody">-->
+
+<!--            <com.gym.sensiyar.customControls.CustomButtonMeduim-->
+<!--                android:id="@+id/addStuAddBtn"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="@dimen/size_4"-->
+<!--                android:background="@drawable/corner_white_btn"-->
+<!--                android:gravity="center"-->
+<!--                android:text="@string/add_stu"-->
+<!--                android:textSize="@dimen/font_size_14" />-->
+
+<!--        </LinearLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

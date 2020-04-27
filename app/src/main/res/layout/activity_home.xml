@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".home.HomeActivity">
+
+        <ImageView
+            android:id="@+id/homeNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_menu"
+            android:layout_margin="@dimen/size_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+            android:id="@+id/homeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_12"
+            android:text="@string/app_name_persian"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_18"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/homeDevider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <LinearLayout
+            android:id="@+id/homeChartHeaderLyt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginTop="@dimen/size_8"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeTitle"
+            app:layout_constraintBottom_toTopOf="@id/homeDevider">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/homeViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/size_25"
+                android:layout_marginBottom="@dimen/size_25" />
+
+        </LinearLayout>
+
+
+        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+            android:id="@+id/homeClassListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeDevider"
+            android:layout_marginRight="@dimen/size_12"
+            android:text="لیست کلاس ها"
+            android:layout_marginBottom="@dimen/size_16"
+            android:textSize="@dimen/font_size_18"
+            android:textColor="@color/colorBlack"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/classListRv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@id/homeAddClass"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeClassListTitle"
+            app:layout_constraintVertical_bias="0.0" />
+
+<!--        <View-->
+<!--            android:id="@+id/homeRvShadow"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/size_10"-->
+<!--            android:background="@drawable/gradiant_recycler_header"-->
+<!--            app:layout_constraintTop_toTopOf="@id/classListRv" />-->
+
+        <com.gym.sensiyar.customControls.CustomButtonMeduim
+            android:id="@+id/homeAddClass"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_12"
+            android:background="@drawable/corner_primary"
+            android:text="@string/add_class_btn"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

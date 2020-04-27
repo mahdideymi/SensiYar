@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/corner_white"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/corner_white"
+        android:id="@+id/regInsuranceBody"
+        android:layoutDirection="rtl"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_25"
+        android:paddingLeft="@dimen/size_14"
+        android:paddingRight="@dimen/size_14"
+        android:paddingTop="@dimen/size_14"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+            android:id="@+id/regInsuranceTitle"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="ثبت بیمه"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_18" />
+
+        <com.gym.sensiyar.customControls.CustomEditTextMedium
+            android:background="@drawable/edt_background"
+            android:hint="شماره بیمه"
+            android:id="@+id/regInsuranceNumber"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_16"
+            android:layout_width="match_parent"
+            android:padding="@dimen/size_10"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_14" />
+
+        <com.gym.sensiyar.customControls.CustomEditTextMedium
+            android:background="@drawable/edt_background"
+            android:hint="تاریخ بیمه"
+            android:id="@+id/regInsuranceDate"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/size_16"
+            android:layout_marginStart="@dimen/size_16"
+            android:layout_width="match_parent"
+            android:padding="@dimen/size_10"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/font_size_14" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/corner_primary"
+        android:gravity="center"
+        android:id="@+id/regInsuranceFooter"
+        android:layout_height="@dimen/size_50"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/size_8"
+        android:paddingTop="@dimen/size_8"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/regInsuranceBody">
+
+        <View
+            android:background="@color/colorWhite"
+            android:id="@+id/regInsuranceBtnDevider"
+            android:layout_height="0dp"
+            android:layout_width="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewMedium
+            android:gravity="center"
+            android:id="@+id/regInsuranceConfirm"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_4"
+            android:layout_width="0dp"
+            android:text="@string/confirm"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/regInsuranceBtnDevider" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewMedium
+            android:gravity="center"
+            android:id="@+id/regInsuranceCancel"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/size_4"
+            android:layout_width="0dp"
+            android:text="@string/cancel"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_14"
+            app:layout_constraintLeft_toRightOf="@id/regInsuranceBtnDevider"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

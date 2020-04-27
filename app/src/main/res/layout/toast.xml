@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/corner_primary"
+    android:paddingRight="@dimen/size_25"
+    android:paddingLeft="@dimen/size_25"
+    android:paddingTop="@dimen/size_14"
+    android:paddingBottom="@dimen/size_14"
+    android:gravity="center">
+
+    <com.gym.sensiyar.customControls.CustomTextViewMedium
+        android:id="@+id/toastMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/font_size_16"
+        tools:text="لطفا مرا ببخش تامام تامام"/>
+
+</LinearLayout>

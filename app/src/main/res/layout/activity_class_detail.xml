@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".classDetail.ClassDetailActivity">
+
+        <View
+            android:id="@+id/classDetailHeader"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageView
+            android:id="@+id/classDetailClose"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_marginRight="@dimen/size_20"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/classDetailHeader"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewHeavy
+            android:id="@+id/classDetailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/size_10"
+            android:text="کلاس ایثارگران"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_16"
+            app:layout_constraintBottom_toBottomOf="@id/classDetailHeader"
+            app:layout_constraintRight_toLeftOf="@id/classDetailClose"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="@dimen/size_4"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="@id/classDetailTitle"
+            app:layout_constraintRight_toLeftOf="@id/classDetailTitle"
+            app:layout_constraintTop_toTopOf="@id/classDetailTitle" />
+
+        <com.gym.sensiyar.customControls.CustomTextViewMedium
+            android:id="@+id/classDetailTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/size_10"
+            android:text="ساعت ۱۸ الی ۱۹:۳۰"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_12"
+            app:layout_constraintBottom_toBottomOf="@id/classDetailHeader"
+            app:layout_constraintRight_toLeftOf="@id/classDetailTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/classDetailPopUp"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_marginLeft="@dimen/size_10"
+            android:src="@drawable/ic_more_menu"
+            app:layout_constraintBottom_toBottomOf="@id/classDetailHeader"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/classDetailStuRv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/classDetailAddStu"
+            app:layout_constraintTop_toBottomOf="@id/classDetailHeader" />
+
+        <com.gym.sensiyar.customControls.CustomButtonMeduim
+            android:id="@+id/classDetailAddStu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_12"
+            android:layout_marginTop="@dimen/size_4"
+            android:layout_marginRight="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_10"
+            android:background="@drawable/corner_primary"
+            android:text="@string/add_student"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_14"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

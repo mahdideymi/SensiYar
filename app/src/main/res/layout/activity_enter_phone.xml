@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="EnterPhoneViewModel"
+            type="com.gym.sensiyar.enterPhone.EnterPhoneViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:isScrollContainer="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:id="@+id/enterPhoneHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_70"
+                android:text="@string/login_header"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_25"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/enterPhoneHint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_40"
+                android:text="@string/enter_tel_hint"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_16"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enterPhoneHeader" />
+
+            <com.gym.sensiyar.customControls.CustomEditTextMedium
+                android:id="@+id/enterPhoneEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edt_background"
+                android:gravity="right"
+                android:hint="@string/edt_enter_tel"
+                android:inputType="number"
+                android:maxLines="1"
+                android:padding="@dimen/size_12"
+                android:text="@={EnterPhoneViewModel.phoneNumber}"
+                android:textSize="@dimen/font_size_14"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/enterPhoneHint"
+                android:layout_marginRight="@dimen/size_30"
+                android:layout_marginLeft="@dimen/size_30"
+                android:layout_marginTop="@dimen/size_50" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/enterPhoneError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_4"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/font_size_12"
+                android:visibility="invisible"
+                tools:text="شماره تلفن خود را به درستی وارد نمایید"
+                app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt" />
+
+
+            <com.gym.sensiyar.customControls.CustomButtonMeduim
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_10"
+                android:background="@drawable/corner_primary"
+                android:onClick="@{(v)->EnterPhoneViewModel.onClick(v)}"
+                android:paddingLeft="@dimen/size_30"
+                android:paddingRight="@dimen/size_30"
+                android:text="@string/next_level"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">SensiYar</string>
+    <string name="app_name_persian">سنسی یار</string>
+    <string name="add_class">اضافه کردن کلاس</string>
+    <string name="strPhoneNumber">ایمیل</string>
+    <string name="strPass">رمز عبور</string>
+    <string name="pass_confirm">تکرار رمز عبور</string>
+    <string name="register">ادامه</string>
+    <string name="register_header">ثبت نام در مربی یار</string>
+    <string name="have_account">اگر حساب کاربری دارید به اینجا بروید</string>
+    <string name="login_header">ورود</string>
+    <string name="forget_password">رمز عبور خود را فراموش کرده اید؟</string>
+    <string name="login">ورود</string>
+    <string name="have_not_account">آیا حساب کاربری ندارید؟ به اینجا بروید</string>
+
+    <!-- validation strings -->
+    <string name="phone_correct">شماره تلفن را به درستی وارد نمایید</string>
+    <string name="phone_empty">شماره تلفن را وارد نمایید</string>
+    <string name="pass_correct">رمز عبور باید بیشتر از ۵ حرف باشد</string>
+    <string name="pass_empty">رمز عبور را وارد نمایید</string>
+    <string name="confirm_pass_correct">لطفا رمز عبور یکسان وارد نمایید</string>
+    <string name="confirm_pass_empty">تکرار رمز عبور را وارد نمایید</string>
+
+
+    <string name="add_class_btn">اضافه کردن کلاس</string>
+    <string name="money_status_class">وضعیت شهریه کلاس ها</string>
+    <string name="class_name">نام کلاس</string>
+    <string name="even">زوج</string>
+    <string name="odd">فرد</string>
+    <string name="every_day">همه روزه</string>
+    <string name="class_time">ساعت کلاس</string>
+    <string name="add_student">اضافه کردن هنرجو</string>
+    <string name="edit_class">ویرایش اطلاعات کلاس</string>
+    <string name="edit">ویرایش</string>
+    <string name="confirm">تایید</string>
+    <string name="cancel">انصراف</string>
+    <string name="add_stu">اضافه کردن هنرجو</string>
+    <string name="name_family">نام و نام خانوادگی</string>
+    <string name="bime_num">شماره بیمه</string>
+    <string name="hbd">تاریخ تولد</string>
+    <string name="phone_num">تلفن</string>
+    <string name="reg_date">تاریخ ثبت نام</string>
+    <string name="price_status">وضعیت شهریه</string>
+    <string name="gym_info">اطلاعات باشگاهی</string>
+    <string name="personal_info">اطلاعات فردی</string>
+    <string name="note">یادداشت</string>
+    <string name="next_level">مرحله بعد</string>
+    <string name="enter_tel_hint">برای ورود شماره تلفن خود را وارد نمایید</string>
+    <string name="edt_enter_tel">مثلا ۰۹۳۰۱۳۸۴۷۰۹</string>
+    <string name="confirm_phone">تایید شماره تلفن</string>
+    <string name="continue_text">ادامه</string>
+    <string name="state">استان</string>
+    <string name="city">شهر</string>
+    <string name="birthday">تاریخ تولد</string>
+    <string name="completeProfile">تکمیل اطلاعات کاربری</string>
+    <string name="full_name">نام و نام خانوادگی</string>
+    <string name="field">رشته رزمی</string>
+</resources>

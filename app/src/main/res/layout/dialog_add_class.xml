@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="addClassViewModel"
+            type="com.gym.sensiyar.addClass.AddClassViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addClassDetailLyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corner_white"
+            android:paddingLeft="@dimen/size_14"
+            android:paddingTop="@dimen/size_14"
+            android:paddingRight="@dimen/size_14"
+            android:paddingBottom="@dimen/size_30"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:id="@+id/addClassTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="اضافه کردن کلاس"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_18"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/addClassClose"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:src="@drawable/ic_close"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/addClassCloseTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="انصراف"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_12"
+                app:layout_constraintBottom_toBottomOf="@id/addClassClose"
+                app:layout_constraintLeft_toRightOf="@id/addClassClose"
+                app:layout_constraintTop_toTopOf="@id/addClassClose" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_14"
+                android:layout_marginRight="@dimen/size_14"
+                android:gravity="right"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addClassClose">
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addClassName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_30"
+                    android:background="@drawable/edt_background"
+                    android:gravity="right"
+                    android:hint="@string/class_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_12"
+                    android:text="@={addClassViewModel.className}"
+                    android:textSize="@dimen/font_size_14" />
+
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addClassTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12"
+                    android:background="@drawable/edt_background"
+                    android:gravity="right"
+                    android:hint="@string/class_time"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_12"
+                    android:text="@={addClassViewModel.classTime}"
+                    android:textSize="@dimen/font_size_14" />
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addClassPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12"
+                    android:background="@drawable/edt_background"
+                    android:gravity="right"
+                    android:hint="شهریه کلاس"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_12"
+                    android:text="@={addClassViewModel.classPrice}"
+                    android:textSize="@dimen/font_size_14" />
+
+                <com.gym.sensiyar.customControls.CustomTextViewMedium
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:text="روزهای"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/font_size_14" />
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addClassPrd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:background="@drawable/edt_background"
+                    android:gravity="right"
+                    android:hint="زوج"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_12"
+                    android:text="@={addClassViewModel.classPeriod}"
+                    android:textSize="@dimen/font_size_14" />
+
+                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                    android:id="@+id/addClassAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_12"
+                    android:background="@drawable/edt_background"
+                    android:gravity="right"
+                    android:hint="آدرس"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:padding="@dimen/size_12"
+                    android:text="@={addClassViewModel.classAddress}"
+                    android:textSize="@dimen/font_size_14" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.gym.sensiyar.customControls.CustomButtonMeduim
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:background="@drawable/corner_primary"
+            android:gravity="center"
+            android:text="اضافه کردن"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/font_size_14"
+            android:onClick="@{(v)->addClassViewModel.onClick(v)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addClassDetailLyt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/addClassDetailPeriodLyt"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="@dimen/size_10"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:weightSum="3"-->
+    <!--android:gravity="center"-->
+    <!--app:layout_constraintTop_toBottomOf="@id/addClassName">-->
+
+    <!--<com.gym.sensiyar.customControls.CustomButtonMeduim-->
+    <!--    android:id="@+id/addClassEven"-->
+    <!--    android:layout_width="0dp"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_weight="1"-->
+    <!--    android:background="@drawable/edt_background"-->
+    <!--    android:padding="@dimen/size_14"-->
+    <!--    android:gravity="center"-->
+    <!--    android:text="@string/even" />-->
+
+    <!--<com.gym.sensiyar.customControls.CustomButtonMeduim-->
+    <!--    android:id="@+id/addClassOdd"-->
+    <!--    android:layout_width="0dp"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginLeft="@dimen/size_8"-->
+    <!--    android:layout_weight="1"-->
+    <!--    android:background="@drawable/corner_primary"-->
+    <!--    android:padding="@dimen/size_14"-->
+    <!--    android:text="@string/odd"-->
+    <!--    android:textColor="@color/colorWhite"-->
+    <!--    android:gravity="center"/>-->
+
+    <!--<com.gym.sensiyar.customControls.CustomButtonMeduim-->
+    <!--    android:id="@+id/addClassEveryDay"-->
+    <!--    android:layout_width="0dp"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_marginLeft="@dimen/size_8"-->
+    <!--    android:layout_weight="1"-->
+    <!--    android:background="@drawable/edt_background"-->
+    <!--    android:padding="@dimen/size_14"-->
+    <!--    android:text="@string/every_day"-->
+    <!--    android:gravity="center"/>-->
+
+    <!--</LinearLayout>-->

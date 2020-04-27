@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="RegisterViewModel"
+            type="com.gym.sensiyar.register.RegisterViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:isScrollContainer="true"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBack">
+
+            <View
+                android:id="@+id/header_register"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/corner_up_primary"
+                android:rotation="180"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@id/header_register"
+                app:layout_constraintLeft_toLeftOf="@id/header_register"
+                app:layout_constraintTop_toTopOf="@id/header_register"
+                app:layout_constraintBottom_toBottomOf="@id/header_register"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_14"
+                android:text="@string/register_header"/>
+
+            <View
+                android:id="@+id/footer_register"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/corner_up_primary"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <com.gym.sensiyar.customControls.CustomTextViewLight
+                android:id="@+id/goToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="@id/footer_register"
+                app:layout_constraintLeft_toLeftOf="@id/footer_register"
+                app:layout_constraintTop_toTopOf="@id/footer_register"
+                app:layout_constraintBottom_toBottomOf="@id/footer_register"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_14"
+                android:text="@string/have_account"/>
+
+            <ImageView
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:src="@drawable/ic_bottom"
+                app:layout_constraintBottom_toTopOf="@id/footer_register"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="@dimen/size_14"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="@dimen/size_14"
+                android:layout_margin="@dimen/size_4"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    app:cardCornerRadius="@dimen/size_4"
+                    app:cardElevation="@dimen/size_8"
+                    android:layout_margin="@dimen/size_10">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layoutDirection="rtl"
+                        android:padding="@dimen/size_18">
+
+                        <ImageView
+                            android:layout_gravity="center"
+                            android:id="@+id/logo_login"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/circle_primary" />
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/regEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_25"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/strPhoneNumber"
+                            android:padding="@dimen/size_12"
+                            android:textSize="@dimen/font_size_14"
+                            android:gravity="right"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:text="@={RegisterViewModel.email}"/>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/regEmailError"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_4"
+                            android:textSize="@dimen/font_size_12"
+                            android:visibility="invisible"
+                            android:textColor="@color/colorRed"/>
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/regPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_8"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/strPass"
+                            android:padding="@dimen/size_12"
+                            android:textSize="@dimen/font_size_14"
+                            android:gravity="right"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:text="@={RegisterViewModel.pass}"/>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/regPassError"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_4"
+                            android:textSize="@dimen/font_size_12"
+                            android:visibility="invisible"
+                            android:textColor="@color/colorRed"/>
+
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/regConfirmPass"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_8"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/pass_confirm"
+                            android:padding="@dimen/size_12"
+                            android:textSize="@dimen/font_size_14"
+                            android:gravity="right"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:text="@={RegisterViewModel.confirmPass}"/>
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/regConfirmPassError"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_4"
+                            android:textSize="@dimen/font_size_12"
+                            android:visibility="invisible"
+                            android:textColor="@color/colorRed"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.gym.sensiyar.customControls.CustomButtonMeduim
+                    android:id="@+id/loginBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/card_register"
+                    android:layout_marginRight="@dimen/size_8"
+                    android:layout_marginLeft="@dimen/size_8"
+                    android:background="@drawable/corner_primary"
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/register"
+                    android:textSize="@dimen/font_size_14"
+                    android:onClick="@{(v)->RegisterViewModel.onClick(v)}"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
+

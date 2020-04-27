@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="stuModel"
+            type="com.gym.sensiyar.classDetail.stuList.StuListModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/stuListLyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        bind:cardBackgroundColor="@color/colorWhite"
+        bind:cardCornerRadius="@dimen/size_10"
+        bind:cardElevation="3dp"
+        android:layout_marginTop="@dimen/size_8"
+        android:layout_marginBottom="@dimen/size_6"
+        android:layout_marginStart="@dimen/size_12"
+        android:layout_marginEnd="@dimen/size_12"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_14">
+
+            <ImageView
+                android:id="@+id/stuListAvatar"
+                android:layout_width="@dimen/size_50"
+                android:layout_height="@dimen/size_50"
+                bind:layout_constraintRight_toRightOf="parent"
+                bind:layout_constraintTop_toTopOf="parent"
+                bind:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/corner_primary"/>
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/stuListName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:layout_constraintRight_toLeftOf="@id/stuListAvatar"
+                bind:layout_constraintTop_toTopOf="@id/stuListAvatar"
+                android:layout_marginRight="@dimen/size_14"
+                android:text="@={stuModel.name}"
+                android:textSize="@dimen/font_size_14"
+                android:textColor="@color/colorBlack"/>
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/stuListRegDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                bind:layout_constraintRight_toLeftOf="@id/stuListAvatar"
+                bind:layout_constraintBottom_toBottomOf="@id/stuListAvatar"
+                android:layout_marginRight="@dimen/size_14"
+                android:text="@={stuModel.regDate}"
+                android:textSize="@dimen/font_size_14"
+                android:textColor="@color/colorBlack"/>
+
+            <ImageView
+                android:id="@+id/stuListStatus"
+                android:layout_width="@dimen/size_16"
+                android:layout_height="@dimen/size_16"
+                bind:layout_constraintLeft_toLeftOf="parent"
+                bind:layout_constraintBottom_toBottomOf="parent"
+                android:background="@drawable/corner_green_1"/>
+
+            <com.gym.sensiyar.customControls.CustomTextViewMedium
+                android:id="@+id/stuListStatusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/font_size_12"
+                android:textColor="@color/colorBlack"
+                android:text="وضعیت شهریه"
+                bind:layout_constraintLeft_toRightOf="@id/stuListStatus"
+                bind:layout_constraintBottom_toBottomOf="@id/stuListStatus"
+                bind:layout_constraintTop_toTopOf="@id/stuListStatus"
+                android:layout_marginLeft="@dimen/size_4"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

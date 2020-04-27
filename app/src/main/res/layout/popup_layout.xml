@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="right">
+
+    <com.gym.sensiyar.customControls.CustomTextViewLight
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/popupText"
+        android:text="ویرایش اطلاعات کلاس"
+        android:padding="@dimen/size_12"
+        android:textSize="@dimen/font_size_12"
+        android:textColor="@color/colorBlack"/>
+
+</LinearLayout>

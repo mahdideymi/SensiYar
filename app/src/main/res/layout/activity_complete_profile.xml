@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="completeViewModel"
+            type="com.gym.sensiyar.completeProfile.CompleteProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            tools:context=".completeProfile.CompleteProfileActivity">
+
+            <com.gym.sensiyar.customControls.CustomTextViewHeavy
+                android:id="@+id/completeProfileHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_55"
+                android:text="@string/completeProfile"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/font_size_25"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.gym.sensiyar.customControls.CustomButtonMeduim
+                android:id="@+id/otpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_10"
+                android:background="@drawable/corner_primary"
+                android:onClick="@{(v)->completeViewModel.onClick(v)}"
+                android:paddingLeft="@dimen/size_40"
+                android:paddingRight="@dimen/size_40"
+                android:text="@string/continue_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_size_14"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_30"
+                android:layout_marginRight="@dimen/size_30"
+                android:layout_marginBottom="@dimen/size_40"
+                app:cardCornerRadius="@dimen/size_10"
+                app:cardElevation="@dimen/size_4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:gravity="right"
+                        android:orientation="vertical"
+                        android:padding="@dimen/size_25">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layoutDirection="rtl"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:id="@+id/completeProfileAddPhoto"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="@dimen/size_10"
+                                android:layout_weight="1"
+                                android:background="@drawable/edt_background"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="@dimen/size_40"
+                                    android:layout_height="@dimen/size_40"
+                                    android:src="@drawable/ic_add_a_photo" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/size_8"
+                                android:layout_weight="2"
+                                android:orientation="vertical">
+
+                                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                    android:id="@+id/completeProfileFullName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edt_background"
+                                    android:hint="@string/full_name"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/size_10"
+                                    android:text="@={completeViewModel.fullName}"
+                                    android:textSize="@dimen/font_size_14" />
+
+                                <com.gym.sensiyar.customControls.CustomTextViewMedium
+                                    android:id="@+id/completeProfileFullNameErr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorRed"
+                                    android:textSize="@dimen/font_size_10"
+                                    android:visibility="invisible"
+                                    app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                                    app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                                    tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                                <com.gym.sensiyar.customControls.CustomEditTextMedium
+                                    android:id="@+id/completeProfileField"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/edt_background"
+                                    android:hint="@string/field"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:padding="@dimen/size_10"
+                                    android:text="@={completeViewModel.field}"
+                                    android:textSize="@dimen/font_size_14" />
+
+                                <com.gym.sensiyar.customControls.CustomTextViewMedium
+                                    android:id="@+id/completeProfileFieldErr"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorRed"
+                                    android:textSize="@dimen/font_size_10"
+                                    android:visibility="invisible"
+                                    app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                                    app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                                    tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/completeProfileState"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/state"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:text="@={completeViewModel.state}"
+                            android:textSize="@dimen/font_size_14" />
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileStateErr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                        <com.gym.sensiyar.customControls.CustomEditTextMedium
+                            android:id="@+id/completeProfileCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/city"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:text="@={completeViewModel.city}"
+                            android:textSize="@dimen/font_size_14" />
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileCityErr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileBirthday"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_background"
+                            android:hint="@string/birthday"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:padding="@dimen/size_10"
+                            android:text="@={completeViewModel.birthDay}"
+                            android:textSize="@dimen/font_size_14" />
+
+                        <com.gym.sensiyar.customControls.CustomTextViewMedium
+                            android:id="@+id/completeProfileBirthdayErr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorRed"
+                            android:textSize="@dimen/font_size_10"
+                            android:visibility="invisible"
+                            app:layout_constraintRight_toRightOf="@id/enterPhoneEdt"
+                            app:layout_constraintTop_toBottomOf="@id/enterPhoneEdt"
+                            tools:text="شماره تلفن خود را به درستی وارد نمایید" />
+                    </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>
+
