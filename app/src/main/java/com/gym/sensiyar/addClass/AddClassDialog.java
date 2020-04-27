@@ -22,7 +22,6 @@ import com.gym.sensiyar.customControls.CustomTextViewMedium;
 
 public class AddClassDialog extends DialogFragment {
 
-    public static final String Name = "mahdi";
     public static final String TAG = "EditClassDialog";
     private String headerStr = null, buttonStr = null;
     public static final String HEADER_KEY = "HEADER", BUTTON_KEY = "BUTTON";
